@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>My Web Wiki</title>
+  <style>
+    :root{--bg:#0f1724;--card:#0b1220;--accent:#7dd3fc;--muted:#9ca3af}
+    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;margin:0;background:linear-gradient(180deg,#071025 0%,#071b2b 100%);color:#e6eef6;display:flex;min-height:100vh;align-items:center;justify-content:center}
+    .wrap{max-width:880px;padding:28px;background:rgba(255,255,255,0.03);border-radius:14px;box-shadow:0 6px 30px rgba(2,6,23,0.6)}
+    header{display:flex;gap:16px;align-items:center}
+    .logo{width:64px;height:64px;flex:0 0 64px}
+    h1{margin:0;font-size:1.6rem}
+    p.lead{color:var(--muted);margin-top:8px}
+    a{color:var(--accent)}
+    footer{margin-top:20px;color:var(--muted);font-size:0.9rem}
+    pre.notice{background:#071220;padding:12px;border-radius:8px;color:#9fb7c8;overflow:auto}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <svg class="logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect rx="12" width="64" height="64" fill="#071b2b" />
+        <g fill="#7dd3fc">
+          <path d="M16 20h32v4H16z" />
+          <path d="M16 30h24v4H16z" />
+          <path d="M16 40h20v4H16z" />
+        </g>
+      </svg>
+      <div>
+        <h1>My Web Wiki</h1>
+        <p class="lead">Placeholder site created for paurushtaunk/my-web-wiki. Add pages and content to the gh-pages branch to update this site.</p>
+      </div>
+    </header>
+
+    <main>
+      <section style="margin-top:18px">
+        <h2>Welcome</h2>
+        <p>This is a starter GitHub Pages site. You can edit <code>index.html</code> in the <strong>gh-pages</strong> branch to add your content, or create additional pages like <code>about.html</code> and link them from here.</p>
+      </section>
+
+      <section style="margin-top:12px">
+        <h3>Get started</h3>
+        <ol>
+          <li>Edit this file in the gh-pages branch on GitHub or clone the repo and push changes to gh-pages.</li>
+          <li>Create additional pages (about.html, contact.html) or a docs/ folder if you prefer Pages from /docs.</li>
+          <li>Wait a minute after pushing — GitHub Pages will publish at <a href="https://paurushtaunk.github.io/my-web-wiki/">https://paurushtaunk.github.io/my-web-wiki/</a>.</li>
+        </ol>
+      </section>
+
+      <pre class="notice">Tip: To preview locally: run a simple HTTP server in this folder, e.g. Python 3: <code>python -m http.server 8000</code></pre>
+
+    </main>
+
+    <footer>Created for <strong>paurushtaunk/my-web-wiki</strong> — branch: <code>gh-pages</code></footer>
+  </div>
+</body>
+</html>
