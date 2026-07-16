@@ -3,76 +3,33 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>My Web Wiki — Blog</title>
+  <title>My Web Wiki — Paurush M Taunk</title>
   <style>
-    /* Theme variables: default to dark, but prefer light when system prefers light */
-    :root{
-      --bg:#061224;
-      --card:#071826;
-      --panel:#0f1b26;
-      --muted:#9ca3af;
-      --accent:#7dd3fc;
-      --text:#e6eef6;
-    }
-    @media (prefers-color-scheme: light){
-      :root{
-        --bg:#f6f8fb;
-        --card:#ffffff;
-        --panel:#f1f5f9;
-        --muted:#475569;
-        --accent:#0369a1;
-        --text:#0b1220;
-      }
-    }
-    /* Explicit theme overrides (when user selects) */
-    [data-theme="dark"]{
-      --bg:#061224; --card:#071826; --panel:#0f1b26; --muted:#9ca3af; --accent:#7dd3fc; --text:#e6eef6;
-    }
-    [data-theme="light"]{
-      --bg:#f6f8fb; --card:#ffffff; --panel:#f1f5f9; --muted:#475569; --accent:#0369a1; --text:#0b1220;
-    }
-
+    :root{--bg:#061224;--card:#071826;--panel:#0f1b26;--muted:#9ca3af;--accent:#7dd3fc;--text:#e6eef6}
+    @media (prefers-color-scheme: light){:root{--bg:#f6f8fb;--card:#ffffff;--panel:#f1f5f9;--muted:#475569;--accent:#0369a1;--text:#0b1220}}
+    [data-theme="dark"]{--bg:#061224;--card:#071826;--panel:#0f1b26;--muted:#9ca3af;--accent:#7dd3fc;--text:#e6eef6}
+    [data-theme="light"]{--bg:#f6f8fb;--card:#ffffff;--panel:#f1f5f9;--muted:#475569;--accent:#0369a1;--text:#0b1220}
     *{box-sizing:border-box}
     body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;background:var(--bg);color:var(--text);min-height:100vh}
     .container{max-width:1100px;margin:28px auto;padding:20px;display:grid;grid-template-columns:260px 1fr;gap:20px}
-
-    /* Theme control (top-right) */
     .theme-control{position:fixed;top:12px;right:12px;z-index:1200}
     .theme-select{background:var(--card);color:var(--text);border:1px solid rgba(0,0,0,0.08);padding:8px 10px;border-radius:8px;font-weight:600}
-
-    /* Sidebar */
     .sidebar{background:rgba(255,255,255,0.03);border-radius:12px;padding:18px;height:calc(100vh - 96px);position:sticky;top:20px;overflow:auto}
     .brand{display:flex;gap:12px;align-items:center;margin-bottom:12px}
     .logo{width:44px;height:44px;background:linear-gradient(135deg,#06293a,#045d7a);border-radius:10px;display:inline-flex;align-items:center;justify-content:center;color:var(--accent);font-weight:700}
-    h1{font-size:1.1rem;margin:0}
+    h1{font-size:1.05rem;margin:0}
     .muted{color:var(--muted);font-size:0.92rem}
-    nav ul{list-style:none;padding:0;margin:14px 0}
-    nav li{margin:8px 0}
-    nav a{color:var(--text);text-decoration:none;padding:8px 10px;border-radius:8px;display:block}
-    nav a:hover{background:rgba(125,211,252,0.06)}
-    .search{margin-top:10px}
+    .search{margin-top:16px}
     .search input{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(0,0,0,0.06);background:transparent;color:inherit}
-
-    /* Main */
     .main{background:rgba(255,255,255,0.02);border-radius:12px;padding:18px;min-height:60vh}
     .main-header{display:flex;justify-content:space-between;align-items:center}
     .main-header h2{margin:0}
-    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;margin-top:18px}
-    .card{background:var(--card);padding:14px;border-radius:10px;box-shadow:0 6px 18px rgba(3,10,18,0.15);transition:transform .12s ease}
-    .card:hover{transform:translateY(-6px)}
+    .card{background:var(--card);padding:18px;border-radius:10px;box-shadow:0 6px 18px rgba(3,10,18,0.15)}
     .card h3{margin:0 0 8px 0}
     .meta{color:var(--muted);font-size:0.9rem;margin-bottom:10px}
-    .excerpt{color:var(--text);font-size:0.95rem}
-    .readmore{display:inline-block;margin-top:10px;color:var(--accent);text-decoration:none}
-
-    /* responsive */
-    @media (max-width:880px){
-      .container{grid-template-columns:1fr; padding:12px}
-      .sidebar{height:auto;position:relative}
-      .theme-control{right:8px}
-    }
-
-    /* small accessibility helper */
+    .excerpt{color:var(--text);font-size:1rem}
+    .readmore{display:inline-block;margin-top:12px;color:var(--accent);text-decoration:none}
+    @media (max-width:880px){.container{grid-template-columns:1fr;padding:12px}.sidebar{height:auto;position:relative}.theme-control{right:8px}}
     .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
   </style>
 </head>
@@ -89,71 +46,34 @@
   <div class="container">
     <aside class="sidebar" aria-label="Site navigation">
       <div class="brand">
-        <div class="logo">W</div>
+        <div class="logo">PM</div>
         <div>
-          <h1>My Web Wiki</h1>
-          <div class="muted">A place for notes &amp; short posts</div>
+          <h1>Paurush M Taunk</h1>
+          <div class="muted">my-web-wiki</div>
         </div>
       </div>
 
       <div class="search" role="search">
-        <input id="search" placeholder="Search posts..." />
+        <input id="search" placeholder="Search posts..." aria-label="Search posts" />
       </div>
 
-      <nav aria-label="Primary">
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">All posts</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-      </nav>
-
-      <section style="margin-top:18px">
-        <h4 style="margin:0 0 8px 0">Tags</h4>
-        <div class="muted">#notes · #dev · #guide · #personal</div>
-      </section>
-
-      <footer style="margin-top:20px;color:var(--muted);font-size:0.9rem">
-        <div>Branch: <code>gh-pages</code></div>
-        <div style="margin-top:8px">Tip: Add new posts by editing <code>index.html</code> or by creating separate pages in this branch.</div>
-      </footer>
     </aside>
 
     <main class="main">
       <div class="main-header">
         <div>
-          <h2>Latest posts</h2>
-          <div class="muted">A curated list of short posts and notes</div>
+          <h2>Latest</h2>
+          <div class="muted">One recent post</div>
         </div>
       </div>
 
-      <div class="grid" id="posts">
-        <!-- Example post cards -->
-        <article class="card" data-title="Getting started with my-web-wiki" data-excerpt="How to get started publishing notes and short posts using GitHub Pages.">
-          <h3>Getting started with my-web-wiki</h3>
-          <div class="meta">Jul 16, 2026 · <span class="muted">Guide</span></div>
-          <p class="excerpt">How to get started publishing notes and short posts using GitHub Pages.</p>
-          <a class="readmore" href="#">Read more →</a>
-        </article>
+      <article class="card" id="post-1" data-title="Getting started with my-web-wiki" data-excerpt="How to get started publishing notes and short posts using GitHub Pages.">
+        <h3>Getting started with my-web-wiki</h3>
+        <div class="meta">Jul 16, 2026 · Guide</div>
+        <p class="excerpt">How to get started publishing notes and short posts using GitHub Pages. Edit this post by updating the gh-pages branch or add separate post pages.</p>
+        <a class="readmore" href="#">Read more →</a>
+      </article>
 
-        <article class="card" data-title="Tip: Local preview with Python" data-excerpt="Quick tip to run a local server for previews using Python's http.server module.">
-          <h3>Tip: Local preview with Python</h3>
-          <div class="meta">Jul 15, 2026 · <span class="muted">Tip</span></div>
-          <p class="excerpt">Quick tip to run a local server for previews using Python's http.server module.</p>
-          <a class="readmore" href="#">Read more →</a>
-        </article>
-
-        <article class="card" data-title="Designing a simple sidebar layout" data-excerpt="A short note on layout decisions for a lightweight documentation/wiki site.">
-          <h3>Designing a simple sidebar layout</h3>
-          <div class="meta">Jul 14, 2026 · <span class="muted">Design</span></div>
-          <p class="excerpt">A short note on layout decisions for a lightweight documentation/wiki site.</p>
-          <a class="readmore" href="#">Read more →</a>
-        </article>
-
-      </div>
-
-      <div style="margin-top:18px;color:var(--muted);font-size:0.95rem">Want individual post pages? I can scaffold separate HTML files for each post and link them from these cards.</div>
     </main>
   </div>
 
@@ -163,64 +83,27 @@
       const select = document.getElementById('theme-select');
       const storageKey = 'site-theme-preference';
       const mq = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)');
-
       function applyTheme(pref){
-        if(pref === 'system'){
-          // remove explicit attribute so CSS can follow system preference
-          document.documentElement.removeAttribute('data-theme');
-        } else if(pref === 'light' || pref === 'dark'){
-          document.documentElement.setAttribute('data-theme', pref);
-        }
-      }
-
-      function readStored(){
-        return localStorage.getItem(storageKey) || 'system';
-      }
-
-      function store(pref){
-        if(pref === 'system') localStorage.removeItem(storageKey);
-        else localStorage.setItem(storageKey, pref);
-      }
-
-      // initialize
-      const stored = readStored();
-      select.value = stored;
-      applyTheme(stored);
-
-      // update when user changes selection
-      select.addEventListener('change', (e) => {
-        const v = e.target.value;
-        store(v);
-        applyTheme(v);
-      });
-
-      // if user chose 'system', respond to system changes
-      function handleSystemChange(e){
-        // only update if current preference is system (no explicit attr)
-        const current = readStored();
-        if(current === 'system'){
-          applyTheme('system');
-        }
-      }
-
-      if(mq){
-        if(typeof mq.addEventListener === 'function') mq.addEventListener('change', handleSystemChange);
-        else if(typeof mq.addListener === 'function') mq.addListener(handleSystemChange);
-      }
+        if(pref === 'system'){document.documentElement.removeAttribute('data-theme');}
+        else if(pref === 'light' || pref === 'dark'){document.documentElement.setAttribute('data-theme', pref);} }
+      function readStored(){return localStorage.getItem(storageKey) || 'system';}
+      function store(pref){ if(pref === 'system') localStorage.removeItem(storageKey); else localStorage.setItem(storageKey, pref); }
+      const stored = readStored(); select.value = stored; applyTheme(stored);
+      select.addEventListener('change', (e)=>{const v=e.target.value; store(v); applyTheme(v);});
+      function handleSystemChange(){ if(readStored() === 'system') applyTheme('system'); }
+      if(mq){ if(typeof mq.addEventListener === 'function') mq.addEventListener('change', handleSystemChange); else if(typeof mq.addListener === 'function') mq.addListener(handleSystemChange); }
     })();
 
-    // Simple client-side search over the example post cards
+    // Simple search that hides the post if no match
     (function(){
       const input = document.getElementById('search');
-      const cards = Array.from(document.querySelectorAll('#posts .card'));
+      const post = document.getElementById('post-1');
       input.addEventListener('input', e => {
-        const q = e.target.value.toLowerCase();
-        cards.forEach(card => {
-          const title = (card.dataset.title || '').toLowerCase();
-          const excerpt = (card.dataset.excerpt || '').toLowerCase();
-          const show = q === '' || title.includes(q) || excerpt.includes(q);
-          card.style.display = show ? '' : 'none';
-        });
+        const q = e.target.value.toLowerCase().trim();
+        const title = (post.dataset.title || '').toLowerCase();
+        const excerpt = (post.dataset.excerpt || '').toLowerCase();
+        const show = q === '' || title.includes(q) || excerpt.includes(q);
+        post.style.display = show ? '' : 'none';
       });
     })();
   </script>
