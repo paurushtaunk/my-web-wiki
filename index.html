@@ -16,7 +16,7 @@
     .theme-select{background:var(--card);color:var(--text);border:1px solid rgba(0,0,0,0.08);padding:8px 10px;border-radius:8px;font-weight:600}
     .sidebar{background:rgba(255,255,255,0.03);border-radius:12px;padding:18px;height:calc(100vh - 96px);position:sticky;top:20px;overflow:auto}
     .brand{display:flex;gap:12px;align-items:center;margin-bottom:12px}
-    .logo{width:44px;height:44px;background:linear-gradient(135deg,#06293a,#045d7a);border-radius:10px;display:inline-flex;align-items:center;justify-content:center;color:var(--accent);font-weight:700}
+    .logo{width:44px;height:44px;background:linear-gradient(135deg,#06293a,#045d7a);border-radius:10px;display:inline-flex;align-items:center;justify-content:center;color:var(--accent);font-weight[...]
     h1{font-size:1.05rem;margin:0}
     .muted{color:var(--muted);font-size:0.92rem}
     .search{margin-top:16px}
@@ -71,7 +71,7 @@
         <h3>Getting started with my-web-wiki</h3>
         <div class="meta">Jul 16, 2026 · Guide</div>
         <p class="excerpt">How to get started publishing notes and short posts using GitHub Pages. Edit this post by updating the gh-pages branch or add separate post pages.</p>
-        <a class="readmore" href="posts/getting-started.html">Read more →</a>
+        <a class="readmore" href="#">Read more →</a>
       </article>
 
     </main>
@@ -92,6 +92,7 @@
       if(mq){ if(typeof mq.addEventListener === 'function') mq.addEventListener('change', handleSystemChange); else if(typeof mq.addListener === 'function') mq.addListener(handleSystemChange); }
     })();
 
+    // Simple search that hides the post if no match
     (function(){
       const input = document.getElementById('search');
       const post = document.getElementById('post-1');
