@@ -1,59 +1,131 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>My Web Wiki</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>My Web Wiki — Blog</title>
   <style>
-    :root{--bg:#0f1724;--card:#0b1220;--accent:#7dd3fc;--muted:#9ca3af}
-    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;margin:0;background:linear-gradient(180deg,#071025 0%,#071b2b 100%);color:#e6eef6;display:flex;min-height:100vh;align-items:center;justify-content:center}
-    .wrap{max-width:880px;padding:28px;background:rgba(255,255,255,0.03);border-radius:14px;box-shadow:0 6px 30px rgba(2,6,23,0.6)}
-    header{display:flex;gap:16px;align-items:center}
-    .logo{width:64px;height:64px;flex:0 0 64px}
-    h1{margin:0;font-size:1.6rem}
-    p.lead{color:var(--muted);margin-top:8px}
-    a{color:var(--accent)}
-    footer{margin-top:20px;color:var(--muted);font-size:0.9rem}
-    pre.notice{background:#071220;padding:12px;border-radius:8px;color:#9fb7c8;overflow:auto}
+    :root{--bg:#0b1220;--card:#071826;--muted:#9ca3af;--accent:#7dd3fc;--panel:#0f1b26}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;background:linear-gradient(180deg,#061224 0%,#071b2b 100%);color:#e6eef6;min-height:100vh}
+    .container{max-width:1100px;margin:28px auto;padding:20px;display:grid;grid-template-columns:260px 1fr;gap:20px}
+    /* Sidebar */
+    .sidebar{background:rgba(255,255,255,0.03);border-radius:12px;padding:18px;height:calc(100vh - 96px);position:sticky;top:20px;overflow:auto}
+    .brand{display:flex;gap:12px;align-items:center;margin-bottom:12px}
+    .logo{width:44px;height:44px;background:linear-gradient(135deg,#06293a,#045d7a);border-radius:10px;display:inline-flex;align-items:center;justify-content:center;color:var(--accent);font-weight:700}
+    h1{font-size:1.1rem;margin:0}
+    .muted{color:var(--muted);font-size:0.92rem}
+    nav ul{list-style:none;padding:0;margin:14px 0}
+    nav li{margin:8px 0}
+    nav a{color:#dff7ff;text-decoration:none;padding:8px 10px;border-radius:8px;display:block}
+    nav a:hover{background:rgba(125,211,252,0.08)}
+    .search{margin-top:10px}
+    .search input{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit}
+
+    /* Main */
+    .main{background:rgba(255,255,255,0.02);border-radius:12px;padding:18px;min-height:60vh}
+    .main-header{display:flex;justify-content:space-between;align-items:center}
+    .main-header h2{margin:0}
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;margin-top:18px}
+    .card{background:var(--card);padding:14px;border-radius:10px;box-shadow:0 6px 18px rgba(3,10,18,0.6);transition:transform .12s ease}
+    .card:hover{transform:translateY(-6px)}
+    .card h3{margin:0 0 8px 0}
+    .meta{color:var(--muted);font-size:0.9rem;margin-bottom:10px}
+    .excerpt{color:#cfeaf6;font-size:0.95rem}
+    .readmore{display:inline-block;margin-top:10px;color:var(--accent);text-decoration:none}
+
+    /* responsive */
+    @media (max-width:880px){
+      .container{grid-template-columns:1fr; padding:12px}
+      .sidebar{height:auto;position:relative}
+    }
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <svg class="logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <rect rx="12" width="64" height="64" fill="#071b2b" />
-        <g fill="#7dd3fc">
-          <path d="M16 20h32v4H16z" />
-          <path d="M16 30h24v4H16z" />
-          <path d="M16 40h20v4H16z" />
-        </g>
-      </svg>
-      <div>
-        <h1>My Web Wiki</h1>
-        <p class="lead">Placeholder site created for paurushtaunk/my-web-wiki. Add pages and content to the gh-pages branch to update this site.</p>
+  <div class="container">
+    <aside class="sidebar" aria-label="Site navigation">
+      <div class="brand">
+        <div class="logo">W</div>
+        <div>
+          <h1>My Web Wiki</h1>
+          <div class="muted">A place for notes &amp; short posts</div>
+        </div>
       </div>
-    </header>
 
-    <main>
+      <div class="search" role="search">
+        <input id="search" placeholder="Search posts..." />
+      </div>
+
+      <nav aria-label="Primary">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">All posts</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+
       <section style="margin-top:18px">
-        <h2>Welcome</h2>
-        <p>This is a starter GitHub Pages site. You can edit <code>index.html</code> in the <strong>gh-pages</strong> branch to add your content, or create additional pages like <code>about.html</code> and link them from here.</p>
+        <h4 style="margin:0 0 8px 0">Tags</h4>
+        <div class="muted">#notes · #dev · #guide · #personal</div>
       </section>
 
-      <section style="margin-top:12px">
-        <h3>Get started</h3>
-        <ol>
-          <li>Edit this file in the gh-pages branch on GitHub or clone the repo and push changes to gh-pages.</li>
-          <li>Create additional pages (about.html, contact.html) or a docs/ folder if you prefer Pages from /docs.</li>
-          <li>Wait a minute after pushing — GitHub Pages will publish at <a href="https://paurushtaunk.github.io/my-web-wiki/">https://paurushtaunk.github.io/my-web-wiki/</a>.</li>
-        </ol>
-      </section>
+      <footer style="margin-top:20px;color:var(--muted);font-size:0.9rem">
+        <div>Branch: <code>gh-pages</code></div>
+        <div style="margin-top:8px">Tip: Add new posts by editing <code>index.html</code> or by creating separate pages in this branch.</div>
+      </footer>
+    </aside>
 
-      <pre class="notice">Tip: To preview locally: run a simple HTTP server in this folder, e.g. Python 3: <code>python -m http.server 8000</code></pre>
+    <main class="main">
+      <div class="main-header">
+        <div>
+          <h2>Latest posts</h2>
+          <div class="muted">A curated list of short posts and notes</div>
+        </div>
+      </div>
 
+      <div class="grid" id="posts">
+        <!-- Example post cards -->
+        <article class="card" data-title="Getting started with my-web-wiki" data-excerpt="How to get started publishing notes and short posts using GitHub Pages.">
+          <h3>Getting started with my-web-wiki</h3>
+          <div class="meta">Jul 16, 2026 · <span class="muted">Guide</span></div>
+          <p class="excerpt">How to get started publishing notes and short posts using GitHub Pages.</p>
+          <a class="readmore" href="#">Read more →</a>
+        </article>
+
+        <article class="card" data-title="Tip: Local preview with Python" data-excerpt="Quick tip to run a local server for previews using Python's http.server module.">
+          <h3>Tip: Local preview with Python</h3>
+          <div class="meta">Jul 15, 2026 · <span class="muted">Tip</span></div>
+          <p class="excerpt">Quick tip to run a local server for previews using Python's http.server module.</p>
+          <a class="readmore" href="#">Read more →</a>
+        </article>
+
+        <article class="card" data-title="Designing a simple sidebar layout" data-excerpt="A short note on layout decisions for a lightweight documentation/wiki site.">
+          <h3>Designing a simple sidebar layout</h3>
+          <div class="meta">Jul 14, 2026 · <span class="muted">Design</span></div>
+          <p class="excerpt">A short note on layout decisions for a lightweight documentation/wiki site.</p>
+          <a class="readmore" href="#">Read more →</a>
+        </article>
+
+      </div>
+
+      <div style="margin-top:18px;color:var(--muted);font-size:0.95rem">Want individual post pages? I can scaffold separate HTML files for each post and link them from these cards.</div>
     </main>
-
-    <footer>Created for <strong>paurushtaunk/my-web-wiki</strong> — branch: <code>gh-pages</code></footer>
   </div>
+
+  <script>
+    // Simple client-side search over the example post cards
+    const input = document.getElementById('search');
+    const cards = Array.from(document.querySelectorAll('#posts .card'));
+    input.addEventListener('input', e => {
+      const q = e.target.value.toLowerCase();
+      cards.forEach(card => {
+        const title = card.dataset.title.toLowerCase();
+        const excerpt = card.dataset.excerpt.toLowerCase();
+        const show = q === '' || title.includes(q) || excerpt.includes(q);
+        card.style.display = show ? '' : 'none';
+      });
+    });
+  </script>
 </body>
 </html>
